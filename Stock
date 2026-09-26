@@ -1,0 +1,25 @@
+package stock;
+
+public class Stock {
+    String symbol;
+    String name;
+    double currentPrice ;
+    double previousClosingPrice;
+    
+    public Stock(String symbol,String name){
+    this.symbol=symbol;
+    this.name=name;
+  
+    }
+
+    public double getChangePercent(){
+        return (this.currentPrice - this.previousClosingPrice )/this.currentPrice*100;
+    }
+    public static void main(String[] args) {
+        Stock s1=new Stock("OCL","Oracle Corporation");
+        s1.currentPrice=34.5;
+        s1.previousClosingPrice=1;
+        System.out.println(s1.getChangePercent()+" "+s1.symbol+" "+s1.name);
+        
+    }
+    }
